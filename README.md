@@ -29,3 +29,7 @@ Run full flow script only
 ```
 npx playwright full-flow-script.spec.js
 ```
+Generate Report
+```
+npx playwright show-report
+```
