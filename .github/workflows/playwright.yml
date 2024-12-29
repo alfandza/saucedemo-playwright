@@ -26,3 +26,6 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
+    - name: Generate workflow summary with report link
+      run: echo "View the report [here](playwright-report/index.html)" >> $GITHUB_STEP_SUMMARY
+  
