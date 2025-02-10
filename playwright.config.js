@@ -21,7 +21,21 @@ module.exports = defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: [ 
+    ['html'],
+    [
+      'playwright-mail-reporter',
+      {
+        host: "smtp.gmail.com",
+        port: "465",
+        username: "websumoplaywright",
+        password: "dyrxxmmnqoigovdl",
+        from: "websumoplaywright@gmail.com",
+        to: "yantooan3@gmail.com, muhammadffajar8@gmail.com", // Comma separated list of email addresses
+        subject: "Playwright Testing"
+      }
+    ]
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
