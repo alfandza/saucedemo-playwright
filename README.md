@@ -19,15 +19,15 @@ npx playwright test
 
 Run login test only
 ```
-npx playwright test login.spec.js
+npx playwright test 1_login.spec.js
 ```
 Run select item only
 ```
-npx playwright test select-item.spec.js
+npx playwright test 2_select-item.spec.js
 ```
 Run full flow script only
 ```
-npx playwright full-flow-script.spec.js
+npx playwright test 3_full-flow-script.spec.js
 ```
 Generate Report
 ```
