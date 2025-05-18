@@ -6,7 +6,7 @@ const { defineConfig, devices } = require('@playwright/test');
  * https://github.com/motdotla/dotenv
  */
 // require('dotenv').config({ path: path.resolve(__dirname, '.env') });
-
+require('dotenv').config();
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
@@ -21,8 +21,6 @@ module.exports = defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 2 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
-  /*
   reporter: [ 
     ['html'],
     [
@@ -31,14 +29,14 @@ module.exports = defineConfig({
         host: "smtp.gmail.com",
         port: "465",
         username: "websumoplaywright",
-        password: "dyrxxmmnqoigovdl",
+        password: process.env.PASSWORDEMAILSEND,
         from: "websumoplaywright@gmail.com",
         to: "yantooan3@gmail.com, muhammadffajar8@gmail.com", // Comma separated list of email addresses
         subject: "Playwright Testing"
       }
     ]
   ],
-  */
+  
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */

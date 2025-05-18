@@ -27,7 +27,7 @@ npx playwright test 2_select-item.spec.js
 ```
 Run full flow script only
 ```
-npx playwright 3_full-flow-script.spec.js
+npx playwright test 3_full-flow-script.spec.js
 ```
 Generate Report
 ```
