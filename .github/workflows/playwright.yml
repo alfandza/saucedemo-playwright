@@ -22,6 +22,7 @@ jobs:
           PASSWORD: ${{ secrets.PASSWORD }}
           USERNAME_WRONG: ${{ secrets.USERNAME_WRONG }}
           USERNAME_LOCKED: ${{ secrets.USERNAME_LOCKED }}
+          PASSWORDEMAILSEND: ${{ secrets.PASSWORDEMAILSEND }}
       run: npx playwright test
     - uses: actions/upload-artifact@v4
       if: always()
